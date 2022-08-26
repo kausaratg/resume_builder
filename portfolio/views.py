@@ -1,20 +1,47 @@
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView, ListView
-import portfolio
-from portfolio.forms import UserForm
+from django.views.generic import TemplateView, ListView, CreateView,  UpdateView
+from portfolio.forms import UserForm, PortfolioForm
 from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from portfolio.models import Portfolio
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 class Home(TemplateView):
     template_name = 'portfolio/index.html'
 
+class personal_info(LoginRequiredMixin, CreateView):
+    login_url = '/signin/'
+    form_class = PortfolioForm
+    model = Portfolio
+    context_name = "form"
+    template_name = 'portfolio/personal_info.html'
+
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.username = self.request.user
+        obj.save()
+        return redirect('index')
+
+class UpdatePersonal_info(LoginRequiredMixin, UpdateView):
+    login_url = '/signin/'
+    form_class = PortfolioForm
+    model = Portfolio
+    context_name = "form"
+    template_name = 'portfolio/personal_info.html'
+
+    def form_valid(self, form):
+        obj = form.save(commit=False)
+        obj.username = self.request.user
+        obj.save()
+        return redirect('index')
+
 
 ###############################      REGISTER    #################################
 def signup_user(request):
     form_name = UserForm()
-    if request.method =='POST' :
+    if request.method =="POST":
         form_name = UserForm(request.POST)
         if form_name.is_valid():
             form_name.save()
@@ -37,12 +64,17 @@ def signin_user(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('index')
+                return redirect('personal_info')
             else:
+                messages.error('Invalid input.. Please try again.')
                 return redirect('signin_user')
     form = AuthenticationForm()
     context = {'form':form}
     return render(request, 'portfolio/signin.html', context)
+
+def logout_user(request):
+    logout(request)
+    return redirect('signin')
     
         
 

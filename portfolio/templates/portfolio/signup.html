@@ -9,9 +9,9 @@
         {% for message in messages %}
         {{message}}
         {% endfor %}
-        <form action="{%url 'index' %}" method="POST">
-            <h1 class="text-center">Register</h1>
+        <form action="" method="POST">
             {%csrf_token%}
+            <h1 class="text-center">Register</h1>
             {{form_name.as_p}}
             <input type="submit" class="btn btn-primary" value="Get Stated">
         </form>

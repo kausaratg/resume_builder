@@ -1,6 +1,6 @@
 {% load static %}
 <!--TITLE-->
-<title>Travelling Website</title>
+<title>Resume Builder</title>
 
 <link rel="shortcut icon" href="#" />
 
@@ -19,20 +19,11 @@
 
 <!--STYLE SHEET-->
 <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-<link rel="stylesheet" href="css/animate.css" />
 
 </head>
 <body>
 
-<!--NAV-->
-<nav>
-<a href="#" class="flex active"><img src="https://i.postimg.cc/RFX4LPV7/01.png" alt=""><sub class="info">Home</sub></a>
-<a href="#" class="flex"><img src="https://i.postimg.cc/sxxy6pvt/02.png" alt=""><sub class="info">Recent Places</sub></a>
-<a href="#" class="flex"><img src="https://i.postimg.cc/yxGKwkRW/03.png" alt=""><sub class="info">Destination</sub></a>
-<a href="#" class="flex"><img src="https://i.postimg.cc/jq3RWk1K/04.png" alt=""><sub class="info">Blog</sub></a>
-<a href="#" class="flex"><img src="https://i.postimg.cc/ncspqG8m/05.png" alt=""><sub class="info">Contact Us</sub></a>
-<a href="#" class="flex"><img src="https://i.postimg.cc/65Dwc4wm/06.png" alt=""><sub class="info">About Us</sub></a>
-</nav>
+
 
 <!--MAIN-->
 <main class="flex">
@@ -40,9 +31,9 @@
 <img src="https://i.postimg.cc/02NrFwT5/canva.png" class="logo" alt="Travelling">
 <h1 class="title">Welcome To<br><span class="stroke">Resume Builder</span></h1>
 <span class="icons flex">
-<a href="{%url 'signin'%}" class="shape" title="Facebook">Get Stated</a>
-<a href="{%url 'signup' %}" class="shape" title="Instagram">Signup</i></a>
-<a href="{%url 'signin'%}" class="shape" title="Youtube">Login</a>
+<a href="{%url 'personal_info'%}" class="shape" title="Start">Get Stated</a>
+<a href="{%url 'signup' %}" class="shape" title="signup">Signup</i></a>
+<a href="{%url 'signin'%}" class="shape" title="Login">Login</a>
 <a href="#" class="shape" title="Twitter"><i class="fa fa-twitter"></i></a>
 </span>
 </article>
