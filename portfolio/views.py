@@ -1,5 +1,6 @@
+from typing import List
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView, ListView, CreateView,  UpdateView
+from django.views.generic import TemplateView, ListView, CreateView,  UpdateView, DetailView
 from portfolio.forms import UserForm, PortfolioForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
@@ -36,6 +37,20 @@ class UpdatePersonal_info(LoginRequiredMixin, UpdateView):
         obj.username = self.request.user
         obj.save()
         return redirect('index')
+
+class cv_list(ListView):
+    template_name = 'portfolio/cv_list.html'
+    model = Portfolio
+    context_object_name = 'port'
+
+class test_template(DetailView):
+    model= Portfolio
+    template_name = 'portfolio/templates/index_1.html'
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['ports'] = Portfolio.objects.filter(username = self.request.user)
+    #     return context
+ 
 
 
 ###############################      REGISTER    #################################

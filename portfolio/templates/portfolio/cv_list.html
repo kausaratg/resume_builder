@@ -1,0 +1,15 @@
+{% extends 'portfolio/base.html' %}
+{% load static%}
+{% block content %}
+<link rel="stylesheet" href="{%static 'css/list.css' %}">
+<div class="container">
+    <h1 class="text-center">Templates</h1>
+    <div class="row">
+        <a class="col-4 mt-5" href="{%url 'text' user.pk%}"><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv1.png' %}"></a>
+        <a class="col-4 mt-5 image" href=""><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv2.png' %}"></a>
+        <a class="col-md-4" href=""><img src=""></a>
+    </div>
+    <a class="col-md-4" href=""><img src=""></a>
+    <a class="col-md-4" href=""><img src=""></a>
+</div>
+{% endblock %}

@@ -7,5 +7,7 @@ urlpatterns = [
     path('signin/', views.signin_user, name="signin"),
     path('logout', views.logout_user, name="logout"),
     path('personal_info/', views.personal_info.as_view(), name="personal_info"),
-    path('update_info<str:pk>', views.UpdatePersonal_info.as_view(), name="update_info")
+    path('update_info/<str:pk>', views.UpdatePersonal_info.as_view(), name="update_info"),
+    path('cv_template', views.cv_list.as_view(), name="cv_template"),
+    path('text/<str:pk>', views.test_template.as_view(), name="text")
 ]
