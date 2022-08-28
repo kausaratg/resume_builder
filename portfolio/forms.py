@@ -18,7 +18,9 @@ class PortfolioForm(forms.ModelForm):
             'education': SummernoteWidget(attrs={'width':'100%', 'summernote': {'background':'rgba(255,255,255,0.1', 'color':'rgba(255,255,255,0.1'}}),
             'certificate': SummernoteWidget(),
             'skills': SummernoteWidget(),
-            'hobbies': SummernoteWidget()
+            'hobbies': SummernoteWidget(),
+            'about': SummernoteWidget(),
+            'links': SummernoteWidget()
         }
 
 

@@ -1,5 +1,7 @@
 from django.db import models
 from django.urls import reverse
+# from mysite.settings import PhoneNumberField
+from phonenumber_field.modelfields import PhoneNumberField
 from django.contrib.auth.models import User
 
 
@@ -10,7 +12,10 @@ class Portfolio(models.Model):
     last_name = models.CharField(max_length=200)
     other_name = models.CharField(max_length=200)
     email = models.EmailField()
-    phone = models.IntegerField()
+    phone = models.PhoneNumberField()
+    links = models.TextField(blank=True)
+    profile_images = models.ImageField(blank=True, upload_to="profile_img")
+    about = models.TextField()
     education = models.TextField(null=True, blank=True)
     certificate = models.TextField(null=True, blank=True)
     skills = models.TextField(null=True, blank=True)

@@ -30,8 +30,8 @@
       <div class="container">
         <div class="content-center">
           <div class="cc-profile-image"><a href="#"><img src="{%static 'images/templates/anthony.jpg' %}" alt="Image"/></a></div>
-          <div class="h2 title">{{request.user.username}}</div>
-          <p class="category text-white">{{request.user.email}} || 0908765489</p>
+          <div class="h2 title">{{ports.first_name}} {{ports.last_name}}</div>
+          <p class="category text-white">{{ports.email}} || {{ports.phone}}</p>
         </div>
       </div>
       <div class="section">
@@ -175,7 +175,7 @@
           <div class="card-body">
             <div class="h5">Bachelor of Computer Science</div>
             <p class="category">University of Computer Science</p>
-            <p>Euismod massa scelerisque suspendisse fermentum habitant vitae ullamcorper magna quam iaculis, tristique sapien taciti mollis interdum sagittis libero nunc inceptos tellus, hendrerit vel eleifend primis lectus quisque cubilia sed mauris. Lacinia porta vestibulum diam integer quisque eros pulvinar curae, curabitur feugiat arcu vivamus parturient aliquet laoreet at, eu etiam pretium molestie ultricies sollicitudin dui.</p>
+            <p>{{ports.education}}</p>
           </div>
         </div>
       </div>

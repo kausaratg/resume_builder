@@ -46,10 +46,10 @@ class cv_list(ListView):
 class test_template(DetailView):
     model= Portfolio
     template_name = 'portfolio/templates/index_1.html'
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['ports'] = Portfolio.objects.filter(username = self.request.user)
-    #     return context
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['ports'] = Portfolio.objects.get(username = self.request.user)
+        return context
  
 
 

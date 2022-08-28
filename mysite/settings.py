@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     'django_summernote',
+    'phonenumber_field',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

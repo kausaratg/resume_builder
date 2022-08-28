@@ -4,6 +4,6 @@ from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
 class PostAdmin(SummernoteModelAdmin):
-    summernote_fields = ('education', 'certificate', 'skills', 'hobbies')
+    summernote_fields = ('education', 'certificate', 'skills', 'hobbies', 'about', 'links')
 
 admin.site.register(Portfolio, PostAdmin)
