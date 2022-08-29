@@ -1,0 +1,114 @@
+{%load static %}
+<!DOCTYPE html>
+<!-- upto 2 directory depth-->
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Super Folio</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap" media="print" onload="this.media='all'"/>
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800&amp;display=swap"/>
+    </noscript>
+    <link href="{%static 'css/template3/font-awesome/css/all.min.css' %}" rel="stylesheet">
+    <link href="{%static 'css/template3/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{%static 'css/template3/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{%static 'css/template3/aos.css' %}" rel="stylesheet">
+    <link href="{%static 'css/template3/main.css' %}" rel="stylesheet">
+    <noscript>
+      <style type="text/css">
+        [data-aos] {
+            opacity: 1 !important;
+            transform: translate(0) scale(1) !important;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body id="top">
+    <div class="page-content">
+      <div id="content">
+<header>
+  <div class="cover bg-light">
+    <div class="container px-3">
+      <div class="row">
+        <div class="col-lg-6 p-2"><img class="img-fluid" src="{%static 'images/template3/illustrations/hello3.svg' %}" alt="hello"/></div>
+        <div class="col-lg-6">
+          <div class="mt-5">
+            <p class="lead text-uppercase mb-1">Hello!</p>
+            <h1 class="intro-title marker">I’m {{ports.first_name}} {{ports.last_name}} {{ports.other_name}}</h1>
+            <p class="lead fw-normal mt-3">{{ports.email}} || {{ports.phone}}</p>
+            <div class="social-nav">
+              <nav role="navigation">
+                  {{ports.links|safe}}
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="section pt-4 px-3 px-lg-4" id="about">
+  <div class="container-narrow">
+    <div class="row bg-light">
+      <div class="col-md-6">
+        <h2 class="h4 my-2">About Me</h2>
+        <p>{{ports.about|safe}}</p>
+        <div class="row mt-3">
+          <div class="">
+            <h2 class="h4 my-2">Bio</h2>
+            <div class="pb-1">{{ports.Basic_information|safe}}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5 offset-md-1"><img class="avatar img-fluid mt-2" src="{{ports.portfolio_image.url}}" width="400" height="400" alt="Walter Patterson"/></div>
+    </div>
+  </div>
+</div>
+<div class="section pt-4 px-3 px-lg-4" id="about">
+  <div class="container-narrow">
+    <div class="row bg-light">
+      <div class="col-md-6">
+        <h2 class="h4 my-2">Education</h2>
+        <p>{{ports.education|safe}}</p>
+      </div>
+      <div class="col-md-5 offset-md-1">
+        <h2 class="h4 my-2">Skills</h2>
+        {{ports.skills|safe}}
+      </div>
+    </div>
+  </div>
+</div>
+<div class="section pt-4 px-3 px-lg-4 mb-5" id="about">
+  <div class="container-narrow">
+    <div class="row bg-light">
+      <div class="col-md-6">
+        <h2 class="h4 my-2">Certificate/Work Experience</h2>
+        <p>{{ports.certificate_and_work_experience|safe}}</p>
+      </div>
+      <div class="col-md-5 offset-md-1">
+        <h2 class="h4 my-2">Hobbies</h2>
+        {{ports.hobbies|safe}}
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="pt-4 pb-4 text-center bg-light">
+  <div class="container">
+    <div class="text-small text-secondary">
+      <div class="mb-1">&copy; Super Folio. All rights reserved.</div>
+      <div>
+        <!-- Make sure to buy a license for the template before removing the line below. Buy license on https://templateflip.com/ -->Design - <a href="https://templateflip.com/" target="_blank">TemplateFlip</a></div>
+    </div>
+  </div>
+</footer></div>
+    </div>
+
+<div class="container">
+  <a class="btn btn-warning" href="{%url 'update_info' ports.id%}"> update profile</a>
+</div>
+  </body>
+</html>

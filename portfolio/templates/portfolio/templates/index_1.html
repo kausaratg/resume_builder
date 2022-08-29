@@ -35,7 +35,7 @@
             {%if ports.portfolio_image %}
               <div class="cc-profile-image"><img src="{{ports.portfolio_image.url}}" alt="Image"/></div>
             {% endif %}
-              <div class="h2 title">{{request.user.username}} {{ports.last_name}}</div>
+              <div class="h2 title">{{ports.first_name}} {{ports.last_name}} {{ports.other_name}}</div>
             <p class="category text-white">{{ports.email}} || {{ports.phone}}</p>
           </div>
         </div>
