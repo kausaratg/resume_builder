@@ -23,7 +23,7 @@ class personal_info(LoginRequiredMixin, CreateView):
         obj = form.save(commit=False)
         obj.username = self.request.user
         obj.save()
-        return redirect('index')
+        return redirect('cv_template')
 
 class UpdatePersonal_info(LoginRequiredMixin, UpdateView):
     login_url = '/signin/'
@@ -36,20 +36,22 @@ class UpdatePersonal_info(LoginRequiredMixin, UpdateView):
         obj = form.save(commit=False)
         obj.username = self.request.user
         obj.save()
-        return redirect('index')
+        return redirect('cv_template')
 
 class cv_list(ListView):
     template_name = 'portfolio/cv_list.html'
     model = Portfolio
     context_object_name = 'port'
 
-class test_template(DetailView):
+class test_template(LoginRequiredMixin, ListView):
+    login_url = '/signin/'
     model= Portfolio
     template_name = 'portfolio/templates/index_1.html'
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['ports'] = Portfolio.objects.get(username = self.request.user)
-        return context
+        if self.request.user.username:
+            context['ports'] = Portfolio.objects.get(username__username=self.request.user.username)
+            return context
  
 
 
@@ -79,10 +81,10 @@ def signin_user(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('personal_info')
+                return redirect('cv_template')
             else:
-                messages.error('Invalid input.. Please try again.')
-                return redirect('signin_user')
+                messages.info('Invalid input.. Please try again.')
+                return redirect('signin')
     form = AuthenticationForm()
     context = {'form':form}
     return render(request, 'portfolio/signin.html', context)
