@@ -69,6 +69,24 @@ class text_template3(LoginRequiredMixin, TemplateView):
         context = super().get_context_data(**kwargs)   
         context['ports'] = Portfolio.objects.get(username__username = self.request.user.username)
         return context  
+
+class text_template4(LoginRequiredMixin, TemplateView):
+    login_url = '/signin/'
+    model = Portfolio
+    template_name = 'portfolio/templates/index_4.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['ports'] = Portfolio.objects.get(username__username=self.request.user.username)
+        return context
+
+class text_template5(LoginRequiredMixin, TemplateView):
+    login_url = '/signin/'
+    template_name = "portfolio/templates/index_5.html"
+    model = Portfolio
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['ports'] = Portfolio.objects.get(username__username = self.request.user.username)
+        return context
            
 
 ###############################      REGISTER    #################################

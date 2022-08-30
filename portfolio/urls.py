@@ -11,5 +11,7 @@ urlpatterns = [
     path('cv_template', views.cv_list.as_view(), name="cv_template"),
     path('text/', views.test_template.as_view(), name="text"),
     path('template2/', views.text_template2.as_view(), name="template2"),
-    path('template3/', views.text_template3.as_view(), name="template3")
+    path('template3/', views.text_template3.as_view(), name="template3"),
+    path('template4/', views.text_template4.as_view(), name="template4"),
+    path('template5/', views.text_template5.as_view(), name="template5"),
 ]
