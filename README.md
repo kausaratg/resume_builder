@@ -12,12 +12,17 @@ A Django webapp use to build a Resume
 <li>Login: Authenticate the user and allows the user to gain full access to the platform </li>
 <li>Profile Form: Allows the user to fill in their basic information such as firstname, lastname, email, biography... inoder to render it in the cv template</li>
 <li>Templates: The webapp allows the user to choose any of the template in the templates page. The Webapp consist of 5 different templates. </li>
+
 ### Special Feature
 Resume Builder make use of django summernote which allows the user to costomize their information in the profile form. It has some of features such as 'bold', 'unordered list', 'ordered list', 'font size', 'font family' and also 'paragraph'.
+
 ## To install and run the project
 1. Create a django environment 
-2. clone the project              ```git clone https://github.com/kausaratg/resume_builder.git```
-3. Enter into the directory
+2. clone the project    
+3. 
+4. ```git clone https://github.com/kausaratg/resume_builder.git```
+5. 
+6. Enter into the directory
 ```bash
 cd portfolio_app
 ```
