@@ -6,9 +6,13 @@
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{%static 'css/main.css' %}">
     <div class="container my-5 text-center">
-        {% for message in messages %}
-        {{message}}
-        {% endfor %}
+        {% if messages%}
+        <div class="alert alert-secondary" role="alert">
+            {% for message in messages %}
+            {{message}}
+            {% endfor %}
+        </div>
+        {% endif %}
         <form action="" method="POST">
             {%csrf_token%}
             <h1 class="text-center">Register</h1>

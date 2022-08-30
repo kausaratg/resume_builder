@@ -1,8 +1,8 @@
-*, *:before, *:after {
+/* *, *:before, *:after {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-  }
+  } */
   
   body {
     font-family: 'Nunito', sans-serif;
@@ -10,8 +10,7 @@
   }
   
   form {
-    max-width: 300px;
-    margin: 10px auto;
+    margin: 10px 2px;
     padding: 30px 80px;
     background: #f4f7f8;
     border-radius: 8px;
@@ -21,6 +20,10 @@
     margin: 0 0 30px 0;
     text-align: center;
   }
+  .summernote {
+    margin-top: 200px;
+  }
+
   
   input[type="text"],
   input[type="password"],
@@ -104,10 +107,10 @@
     border-radius: 100%;
   }
   
-  @media screen and (min-width: 480px) {
+  @media screen and (max-width: 480px) {
   
     form {
-      max-width: 1000px;
+      width: fit-content;
     }
   
   }

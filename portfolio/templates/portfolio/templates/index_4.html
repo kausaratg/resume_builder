@@ -25,12 +25,12 @@
     <!-- header -->
     <!-- banner -->
     <div class="ds-banner">
-      <div class="container ">
+      <div class="container  bg-light">
         <div class="row  mt-5 ">
           <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 col-xxl-5">
-            {%if ports.portfolio_image.url%}
+            {%if ports.profile_image%}
               <figure>
-                <img src="{{ports.portfolio_image.url}}">
+                <img src="{{ports.profile_image.url}}">
               </figure>
             {% endif %}
           </div>
@@ -42,7 +42,9 @@
                 </h1>
                 <div class="letter">
                   <div>
-                    <strong>{{ports.links|safe}}</strong>
+                    {% if ports.links %}
+                      <strong>{{ports.links|safe}}</strong>
+                    {% endif %}
                     <strong>{{ports.email}} || {{ports.phone}}</strong>
                   </div>
                 </div>
@@ -68,18 +70,22 @@
     <div class="ds-skills-section">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-            <h2 class="ds-heading">Skills</h2>
-            <div>
-              {{ports.skills|safe}}
+          {% if ports.skills %}
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+              <h2 class="ds-heading">Skills</h2>
+              <div>
+                {{ports.skills|safe}}
+              </div>
             </div>
-          </div>
-          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-            <h2 class="ds-heading">Education</h2>
-            <div>
-              {{ports.education|safe}}
+          {% endif %}
+          {% if ports.education %}
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+              <h2 class="ds-heading">Education</h2>
+              <div>
+                {{ports.education|safe}}
+              </div>
             </div>
-          </div>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -89,18 +95,22 @@
    <div class="ds-experience-section">
      <div class="container">
         <div class="row ds-experience-list">
+          {% if ports.certificate_and_work_experience%}
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
               <section>
                 <h2 class="ds-heading">Certificate And Work Experience</h2>
                 <span class="ds-year">{{ports.certificate_and_work_experience|safe}}</span>
               </section>
             </div>
+          {% endif %}
+          {% if ports.Basic_information%}
             <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
               <section>
                 <h2 class="ds-heading">Bio</h2>
                 <span class="ds-department">{{ports.Basic_information|safe}}</span>
               </section>
             </div>
+          {% endif %}
         </div>
      </div>
    </div>
@@ -108,6 +118,7 @@
 
    <!--  Work -->
    <div class="ds-work-section">
+    {% if ports.hobbies %}
      <div class="container">
         <h2 class="ds-heading">Hobbies</h2>
         <div class="ds-work-list-section">
@@ -123,6 +134,7 @@
           </div>
         </div>
      </div>
+    {% endif %}
    </div>
    <!--  Work -->
 

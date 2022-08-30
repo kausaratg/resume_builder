@@ -34,14 +34,16 @@
         <div class="cover bg-image"><img src="{%static 'images/template2/header-background.jpg' %}"/>
           <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);backdrop-filter: blur(2px);">
           <div class="text-center p-5">
-            {% if ports.portfolio_image %}
-            <div class="avatar p-1"><img class="img-thumbnail shadow-2-strong" src="{{ports.portfolio_image.url}}" width="160" height="160"/></div>
+            {% if ports.profile_image %}
+            <div class="avatar p-1"><img class="img-thumbnail shadow-2-strong" src="{{ports.profile_image.url}}" width="160" height="160"/></div>
             {% endif %}
             <div class="header-bio mt-3">
               <div>
                 <h2 class="h1">{{ports.first_name}} {{ports.last_name}} {{ports.other_name}}</h2>
                 <p>{{ports.email}} || {{ports.phone}}</p>
-                <p>{{ports.links|safe}}</p>
+                {%if ports.links %}
+                  <p>{{ports.links|safe}}</p>
+                {% endif %}
               </div>
               <div class="d-print-none"><a class="btn btn-outline-light btn-lg shadow-sm mt-1 me-3" href="material-resume.pdf" data-aos="fade-right" data-aos-delay="700">Download CV</a><a class="btn btn-info btn-lg shadow-sm mt-1" href="#contact" data-aos="fade-left" data-aos-delay="700">Hire Me</a></div>
             </div>
@@ -57,71 +59,81 @@
           <h2 class="h2  mb-4">About Me</h2>
           <p>{{ports.about|safe}}</p>
         </div>
-        <div class="col-md-5 offset-lg-1">
-          <div class="row mt-2">
-            <h2 class="h2 fw-light mb-4">Bio</h2>
-            <div class="">
-              <div class="pb-2 fw-bolder"><i class="far fa-calendar-alt pe-2 text-muted" style="width:24px;opacity:0.85;"></i> {{ports.Basic_information|safe}}</div>
+        {% if ports.Basic_information %}
+          <div class="col-md-5 offset-lg-1">
+            <div class="row mt-2">
+              <h2 class="h2 fw-light mb-4">Bio</h2>
+              <div class="">
+                <div class="pb-2 fw-bolder"><i class="far fa-calendar-alt pe-2 text-muted" style="width:24px;opacity:0.85;"></i> {{ports.Basic_information|safe}}</div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% if ports.certificate_and_work_experience %}
+    <div class="shadow-1-strong bg-white my-5 p-5" id="experience">
+      <div class="work-experience-section">
+        <h2 class="h2 fw-light mb-4">Work Experience And Certificate</h2>
+        <div class="timeline">
+          <div class="timeline-card timeline-card-info">
+            <div class="timeline-head px-4 pt-3">
+            </div>
+            <div class="timeline-body px-4 pb-4">
+              <div>{{ports.certificate_and_work_experience|safe}}</div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="shadow-1-strong bg-white my-5 p-5" id="experience">
-    <div class="work-experience-section">
-      <h2 class="h2 fw-light mb-4">Work Experience And Certificate</h2>
-      <div class="timeline">
-        <div class="timeline-card timeline-card-info">
-          <div class="timeline-head px-4 pt-3">
+  {% endif %}
+  {% if ports.education %}
+    <div class="shadow-1-strong bg-white my-5 p-5" id="education">
+      <div class="education-section">
+        <h2 class="h2 fw-light mb-4">Education</h2>
+        <div class="timeline">
+          <div class="timeline-card timeline-card-success" >
+            <div class="timeline-body px-4 pb-4">
+              <div>{{ports.education|safe}}</div>
+            </div>
           </div>
-          <div class="timeline-body px-4 pb-4">
-            <div>{{ports.certificate_and_work_experience|safe}}</div>
+          
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if ports.skills %}
+    <div class="shadow-1-strong bg-white my-5 p-5 d-print-none" id="portfolio">
+      <div class="portfolio-section">
+        <h2 class="h2 fw-light mb-4">Skills</h2>
+        <div class="row g-0">
+          <div class="col-md-6"><a href="https://dribbble.com/" target="_blank"><img class="img-fluid" src="{%static 'images/template2/project-1.jpg' %}" width="800" height="500"/></a></div>
+          <div class="col-md-6 d-flex align-items-center">
+            <div class="m-4 mt-md-2">
+              <div class="text-bold h5">{{ports.skills|safe}}</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="shadow-1-strong bg-white my-5 p-5" id="education">
-    <div class="education-section">
-      <h2 class="h2 fw-light mb-4">Education</h2>
-      <div class="timeline">
-        <div class="timeline-card timeline-card-success" >
-          <div class="timeline-body px-4 pb-4">
-            <div>{{ports.education|safe}}</div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-  <div class="shadow-1-strong bg-white my-5 p-5 d-print-none" id="portfolio">
-    <div class="portfolio-section">
-      <h2 class="h2 fw-light mb-4">Skills</h2>
-      <div class="row g-0">
-        <div class="col-md-6"><a href="https://dribbble.com/" target="_blank"><img class="img-fluid" src="{%static 'images/template2/project-1.jpg' %}" width="800" height="500"/></a></div>
-        <div class="col-md-6 d-flex align-items-center">
-          <div class="m-4 mt-md-2">
-            <div class="text-bold h5">{{ports.skills|safe}}</div>
+  {% endif %}
+  {% if ports.hobbies %}
+    <div class="shadow-1-strong bg-white my-5 p-5" id="experience">
+      <div class="work-experience-section">
+        <h2 class="h2 fw-light mb-4">Hobbies</h2>
+        <div class="timeline">
+          <div class="timeline-card timeline-card-info">
+            <div class="timeline-head px-4 pt-3">
+            </div>
+            <div class="timeline-body px-4 pb-4">
+              <div>{{ports.hobbies|safe}}</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="shadow-1-strong bg-white my-5 p-5" id="experience">
-    <div class="work-experience-section">
-      <h2 class="h2 fw-light mb-4">Hobbies</h2>
-      <div class="timeline">
-        <div class="timeline-card timeline-card-info">
-          <div class="timeline-head px-4 pt-3">
-          </div>
-          <div class="timeline-body px-4 pb-4">
-            <div>{{ports.hobbies|safe}}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  {% endif %}
   <footer class="pt-4 pb-4 text-muted text-center d-print-none">
     <div class="container">
       <div class="text-small">

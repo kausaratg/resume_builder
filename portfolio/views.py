@@ -102,7 +102,6 @@ def signup_user(request):
             messages.error(request, 'Invalid input') 
             return redirect('signup')
     else:
-        messages.error(request, 'Invalid input')
         context = {'form_name':form_name}
         return render(request, 'portfolio/signup.html', context)
 
@@ -116,9 +115,9 @@ def signin_user(request):
             if user is not None:
                 login(request, user)
                 return redirect('cv_template')
-            else:
-                messages.info('Invalid input.. Please try again.')
-                return redirect('signin')
+        else:
+            messages.info(request, 'Invalid input.. Please try again.')
+            return redirect('signin')
     form = AuthenticationForm()
     context = {'form':form}
     return render(request, 'portfolio/signin.html', context)

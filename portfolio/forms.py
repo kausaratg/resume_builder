@@ -14,15 +14,15 @@ class PortfolioForm(forms.ModelForm):
     class Meta:
         model = Portfolio
         fields = ("first_name", "last_name", "other_name", "email", "about",
-        "phone", "portfolio_image", "links", "Basic_information", "education", "certificate_and_work_experience", "skills", "hobbies" )
+        "phone", "profile_image", "links", "Basic_information", "education", "certificate_and_work_experience", "skills", "hobbies" )
         widgets = {
-            'education': SummernoteWidget(attrs={'class':'summernote'}),
-            'certificate_and_work_experience': SummernoteWidget(),
-            'skills': SummernoteWidget(),
-            'hobbies': SummernoteWidget(),
-            'about': SummernoteWidget(),
-            'links': SummernoteWidget(),
-            'Basic_information': SummernoteWidget(),
+            'education': SummernoteWidget(attrs={'summernote':{'width':'100%'}} ),
+            'certificate_and_work_experience': SummernoteWidget(attrs={'summernote':{'width':'100%'}}),
+            'skills': SummernoteWidget(attrs={'summernote':{'width':'100%',}}),
+            'hobbies': SummernoteWidget(attrs={'summernote':{'width':'100%'}}),
+            'about': SummernoteWidget(attrs={'summernote':{'width':'100%'}}),
+            'links': SummernoteWidget(attrs={'summernote':{'width':'100%'}}),
+            'Basic_information': SummernoteWidget(attrs={'summernote':{'width':'100%'}}),
         }
 
 

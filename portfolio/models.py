@@ -9,18 +9,18 @@ from django.contrib.auth.models import User
 class Portfolio(models.Model):
     username = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)  
     other_name = models.CharField(max_length=200)
     email = models.EmailField()
-    phone = PhoneNumberField()
+    phone = PhoneNumberField(verbose_name='Phone (+234..........)')
     links = models.TextField(blank=True)
-    portfolio_image = models.ImageField(blank=True, upload_to="profile_img")
+    profile_image = models.ImageField(blank=True, upload_to="profile_img")
     about = models.TextField()
     education = models.TextField(null=True, blank=True)
     certificate_and_work_experience = models.TextField(null=True, blank=True)
     skills = models.TextField(null=True, blank=True)
     hobbies = models.TextField(null=True, blank=True)
-    Basic_information = models.TextField(blank=True)
+    Basic_information = models.TextField(blank=True, verbose_name="Biography (Age, Language, Location...)")
 
     def get_absolute_url(self):
         return reverse("cv_template")

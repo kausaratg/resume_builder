@@ -32,8 +32,8 @@
         <div class="page-header-image" data-parallax="true" style="background-image: url('images/cc-bg-1.jpg')"></div>
         <div class="container">
           <div class="content-center">
-            {%if ports.portfolio_image %}
-              <div class="cc-profile-image"><img src="{{ports.portfolio_image.url}}" alt="Image"/></div>
+            {%if ports.profile_image %}
+              <div class="cc-profile-image"><img src="{{ports.profile_image.url}}" alt="Image"/></div>
             {% endif %}
               <div class="h2 title">{{ports.first_name}} {{ports.last_name}} {{ports.other_name}}</div>
             <p class="category text-white">{{ports.email}} || {{ports.phone}}</p>
@@ -56,19 +56,23 @@
       <div class="card">
         <div class="row">
           <div class="col-lg-6 col-md-12">
-            <div class="card-body">
-              <div class="h4 mt-0 title">About</div>
-              <p>{{ports.about|safe}}</p>
-            </div>
+            {% if ports.about %}
+              <div class="card-body">
+                <div class="h4 mt-0 title">About</div>
+                <p>{{ports.about|safe}}</p>
+              </div>
+            {% endif %}
           </div>
           <div class="col-lg-6 col-md-12">
-            <div class="card-body">
-              <div class="h4 mt-0 title">Basic Information</div>
-              <div class="row">
-                <div class="col-sm-10">{{ports.Basic_information|safe}}</div>
+            {% if ports.Basic_information%}
+              <div class="card-body">
+                <div class="h4 mt-0 title">Basic Information</div>
+                <div class="row">
+                  <div class="col-sm-10">{{ports.Basic_information|safe}}</div>
+                </div>
+                </div>
               </div>
-              </div>
-            </div>
+            {% endif %}
           </div>
         </div>
       </div>
@@ -77,51 +81,59 @@
   <div class="section" id="skill">
   </div>
   <div class="section" id="experience">
-    <div class="container cc-experience">
-      <div class="h4 text-center mb-4 title">Certificate/Work Experience</div>
-      <div class="card">
-        <div class="row">
-          <div class="col-md-9" >
-            <div class="card-body">
-              <div class="h5"></div>
-              {{ports.certificate_and_work_experience|safe}}
+    {% if ports.certificate_and_work_experience%}
+      <div class="container cc-experience">
+        <div class="h4 text-center mb-4 title">Certificate/Work Experience</div>
+        <div class="card">
+          <div class="row">
+            <div class="col-md-9" >
+              <div class="card-body">
+                <div class="h5"></div>
+                {{ports.certificate_and_work_experience|safe}}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    {% endif %}
   </div>
   <div class="section">
-    <div class="container cc-education">
-      <div class="h4 text-center mb-4 title">Education</div>
-      <div class="card">
-        <div class="row">
-          <div class="col-md-9">
-            <div class="card-body">
-              <div class="h5"></div>
-              <p class="category"></p>
-              {{ports.education|safe}}
+    {% if ports.education %}
+      <div class="container cc-education">
+        <div class="h4 text-center mb-4 title">Education</div>
+        <div class="card">
+          <div class="row">
+            <div class="col-md-9">
+              <div class="card-body">
+                <div class="h5"></div>
+                <p class="category"></p>
+                {{ports.education|safe}}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    {% endif %}
   </div>
   <div class="section">
     <div class="container">
       <div class="card">
         <div class="row">
-          <div class="col-6">
-            <div class="card-body">
-              <div class="h4 mt-0 title">Skills</div>
-              {{ports.skills|safe}}
+          {% if ports.skills %}
+            <div class="col-6">
+              <div class="card-body">
+                <div class="h4 mt-0 title">Skills</div>
+                {{ports.skills|safe}}
+              </div>
             </div>
-          </div>
+          {% endif %}
           <div class="col-6">
-            <div class="card-body">
-              <div class="h4 mt-0 title">Hobbies</div>
-                {{ports.hobbies|safe}}
-            </div>
+            {% if ports.hobbies %}
+              <div class="card-body">
+                <div class="h4 mt-0 title">Hobbies</div>
+                  {{ports.hobbies|safe}}
+              </div>
+            {% endif %}
           </div>
         </div>
       </div>

@@ -42,7 +42,9 @@
             <p class="lead fw-normal mt-3">{{ports.email}} || {{ports.phone}}</p>
             <div class="social-nav">
               <nav role="navigation">
+                {% if ports.links %}
                   {{ports.links|safe}}
+                {% endif %}
               </nav>
             </div>
           </div>
@@ -64,35 +66,45 @@
           </div>
         </div>
       </div>
-      <div class="col-md-5 offset-md-1"><img class="avatar img-fluid mt-2" src="{{ports.portfolio_image.url}}" width="400" height="400" alt="Walter Patterson"/></div>
+      {% if ports.profile_image %}
+        <div class="col-md-5 offset-md-1"><img class="avatar img-fluid mt-2" src="{{ports.profile_image.url}}" width="400" height="400" alt="Walter Patterson"/></div>
+        {% endif %}
     </div>
   </div>
 </div>
 <div class="section pt-4 px-3 px-lg-4" id="about">
   <div class="container-narrow">
     <div class="row bg-light">
-      <div class="col-md-6">
-        <h2 class="h4 my-2">Education</h2>
-        <p>{{ports.education|safe}}</p>
-      </div>
-      <div class="col-md-5 offset-md-1">
-        <h2 class="h4 my-2">Skills</h2>
-        {{ports.skills|safe}}
-      </div>
+      {% if ports.education %}
+        <div class="col-md-6">
+          <h2 class="h4 my-2">Education</h2>
+          <p>{{ports.education|safe}}</p>
+        </div>
+      {% endif %}
+      {% if ports.skills %}
+        <div class="col-md-5 offset-md-1">
+          <h2 class="h4 my-2">Skills</h2>
+          {{ports.skills|safe}}
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>
 <div class="section pt-4 px-3 px-lg-4 mb-5" id="about">
   <div class="container-narrow">
     <div class="row bg-light">
-      <div class="col-md-6">
-        <h2 class="h4 my-2">Certificate/Work Experience</h2>
-        <p>{{ports.certificate_and_work_experience|safe}}</p>
-      </div>
-      <div class="col-md-5 offset-md-1">
-        <h2 class="h4 my-2">Hobbies</h2>
-        {{ports.hobbies|safe}}
-      </div>
+      {% if ports.certificate_and_work_experience%}
+        <div class="col-md-6">
+          <h2 class="h4 my-2">Certificate/Work Experience</h2>
+          <p>{{ports.certificate_and_work_experience|safe}}</p>
+        </div>
+      {% endif %}
+      {% if ports.hobbies %}
+        <div class="col-md-5 offset-md-1">
+          <h2 class="h4 my-2">Hobbies</h2>
+          {{ports.hobbies|safe}}
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>
