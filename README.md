@@ -1,5 +1,5 @@
 # resume_builder
-A Django webapp use to build a Resume
+A Django webapp use to build a Resume. It allows the user to fill in their information and then render it in the cv template.
 # Description
 <ul>
 <li>built with Python, Django, HTML, CSS, Bootstrap</li>
