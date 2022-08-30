@@ -19,38 +19,38 @@ Resume Builder make use of django summernote which allows the user to costomize 
 ## To install and run the project
 1. Create a django environment 
 2. clone the project    
-3. 
-4. ```git clone https://github.com/kausaratg/resume_builder.git```
-5. 
-6. Enter into the directory
+3. ```bash
+   git clone https://github.com/kausaratg/resume_builder.git
+     ``` 
+4.  Enter into the directory
 ```bash
 cd portfolio_app
 ```
-4.  Pull any recent change from main branch
+5.  Pull any recent change from main branch
 ```bash
 git pull origin main
 ```
-<li> create a virtual env </li>
+6.  create a virtual env 
 ```bash
 python -m venv env
 ```
-<li>Activate the virtual env</li>
+7. Activate the virtual env
 ```bash
 env/Scripts/activate
 ```
-<li>Install dependencies</li>
+8. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
-<li>Make migration</li>
+9. Make migration
 ```bash
 python manage.py makemigration
 ```
-<li>Migrate the project</li>
+10. Migrate the project
 ```bash
 python manage.py migrate
 ```
-<li>Run local Server</li>
+11. Run local Server
 ```bash
 python manage.py runserver
 ```
