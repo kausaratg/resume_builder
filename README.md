@@ -15,8 +15,7 @@ A webapp use to build a Resume
 Resume Builder make use of django summernote which allows the user to costomize their information in the profile form. It has some of features such as 'bold', 'unordered list', 'ordered list', 'font size', 'font family' and also 'paragraph'.
 ## To install and run the project
 <li>Create a django environment </li>
-<li>clone the project 
-` git clone https://github.com/kausaratg/resume_builder.git `
+<li>clone the project              `git clone https://github.com/kausaratg/resume_builder.git`
 </li>
 <li>Enter into the directory</li>
 ```bash
