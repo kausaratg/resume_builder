@@ -1,11 +1,12 @@
 # resume_builder
-A webapp use to build a Resume
+A Django webapp use to build a Resume
 # Description
 <ul>
 <li>built with Python, Django, HTML, CSS, Bootstrap</li>
 <li>The webapp allows the user to fill in their profile , and then render it in a cv template. It allows user all over the world to build their resume without going through any stress.</li>
 <li>Technology Used: This webapp makes use of mostly Django. Django is a high-level Python web framework with pre-written composite codes for webdevelopment, thus easing the stress of coding on the developers. It is reassuringly secure and exceedingly scalable.</li>
 </ul>
+
 # Features
 <li>Signup: Enables user to signup with Username and password</li>
 <li>Login: Authenticate the user and allows the user to gain full access to the platform </li>
@@ -14,14 +15,13 @@ A webapp use to build a Resume
 ### Special Feature
 Resume Builder make use of django summernote which allows the user to costomize their information in the profile form. It has some of features such as 'bold', 'unordered list', 'ordered list', 'font size', 'font family' and also 'paragraph'.
 ## To install and run the project
-<li>Create a django environment </li>
-<li>clone the project              `git clone https://github.com/kausaratg/resume_builder.git`
-</li>
-<li>Enter into the directory</li>
+1. Create a django environment 
+2. clone the project              `git clone https://github.com/kausaratg/resume_builder.git`
+3. Enter into the directory
 ```bash
 cd portfolio_app
 ```
-<li>Pull any recent change from main branch</li>
+4.  Pull any recent change from main branch
 ```bash
 git pull origin main
 ```
