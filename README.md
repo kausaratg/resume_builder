@@ -14,7 +14,7 @@ A Django webapp use to build a Resume. It allows the user to fill in their infor
 <li>Templates: The webapp allows the user to choose any of the template in the templates page. The Webapp consist of 5 different templates. </li>
 
 ### Special Feature
-Resume Builder make use of django summernote which allows the user to costomize their information in the profile form. It has some of features such as 'bold', 'unordered list', 'ordered list', 'font size', 'font family' and also 'paragraph'.
+Resume Builder make use of django summernote which allows the user to customize their information in the profile form. It has some of features such as 'bold', 'unordered list', 'ordered list', 'font size', 'font family' and also 'paragraph'.
 
 ## To install and run the project
 1. Create a django environment 
