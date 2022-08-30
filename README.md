@@ -16,9 +16,7 @@ Resume Builder make use of django summernote which allows the user to costomize 
 ## To install and run the project
 <li>Create a django environment </li>
 <li>clone the project 
-`
-git clone https://github.com/kausaratg/resume_builder.git
-`
+` git clone https://github.com/kausaratg/resume_builder.git `
 </li>
 <li>Enter into the directory</li>
 ```bash
