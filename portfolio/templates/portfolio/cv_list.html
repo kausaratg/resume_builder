@@ -6,23 +6,23 @@
     <h1 class="text-center">Templates</h1>
     <div class="row">
         {% if user.portfolio.pk %}
-            <a class="col-3 my-5" href="{%url 'text'%}"><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv1.png' %}"></a>
-            <a class="col-4 my-5 image" href="{%url 'template2' %}"><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv2.png' %}"></a>
-            <a class="col-3 my-5" href="{%url 'template3'%}"><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv3.png'%}"></a>
+            <a class="col-md-3 my-5" href="{%url 'text'%}"><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv1.png' %}"></a>
+            <a class="col-md-4 my-5 image" href="{%url 'template2' %}"><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv2.png' %}"></a>
+            <a class="col-md-3 my-5" href="{%url 'template3'%}"><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv3.png'%}"></a>
         {% else %}
             <h5 class="mt-4">You have not created your <a href="{%url 'personal_info'%}"> profile here</a>. Create a profile to view your Resume.</h5>
-            <a class="col-3 my-5" href=""><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv1.png' %}"></a>
-            <a class="col-4 my-5 image" href=""><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv2.png' %}"></a>
-            <a class="col-3 my-5" href=""><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv3.png'%}"></a>
+            <a class="col-md-3 my-5" href=""><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv1.png' %}"></a>
+            <a class="col-md-4 my-5 image" href=""><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv2.png' %}"></a>
+            <a class="col-md-3 my-5" href=""><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv3.png'%}"></a>
         {% endif %}   
     </div>
     <div class="row">
         {% if user.portfolio.pk %}
-            <a class="col-md-4" href="{%url 'template4'%}"><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv4.png'%}"></a>
-            <a class="col-md-4" href="{%url 'template5'%}"><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv5.png'%}"></a>
+            <a class="col-md-4 my-5" href="{%url 'template4'%}"><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv4.png'%}"></a>
+            <a class="col-md-4 md-5" href="{%url 'template5'%}"><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv5.png'%}"></a>
         {% else %}
-            <a class="col-md-4" href=""><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv4.png'%}"></a>
-            <a class="col-md-4" href=""><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv5.png'%}"></a>
+            <a class="col-md-4 my-5" href=""><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv4.png'%}"></a>
+            <a class="col-md-4 my-5" href=""><img class="img-thumbnail" src="{%static 'images/portfolio_img/cv5.png'%}"></a>
         {% endif %}
         </div>
 </div>

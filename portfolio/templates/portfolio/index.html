@@ -23,8 +23,6 @@
 </head>
 <body>
 
-
-
 <!--MAIN-->
 <main class="flex">
 <article class="padding_5x">
@@ -32,9 +30,12 @@
 <h1 class="title">Welcome To<br><span class="stroke">Resume Builder</span></h1>
 <span class="icons flex">
 <a href="{%url 'cv_template'%}" class="shape" title="Start">Get Stated</a>
+{% if user.is_authenticated %}
+<a href="{%url 'logout' %}" class="shape" title="signup">Logout</i></a>
+{% else %}
 <a href="{%url 'signup' %}" class="shape" title="signup">Signup</i></a>
 <a href="{%url 'signin'%}" class="shape" title="Login">Login</a>
-<a href="#" class="shape" title="Twitter"><i class="fa fa-twitter"></i></a>
+{% endif %}
 </span>
 </article>
 </main>
